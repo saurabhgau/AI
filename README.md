@@ -1,5 +1,5 @@
 # Overview
-This C++ program implements a friend recommendation system based on a given table of relationships between candidates. The system employs depth-first search (DFS) to explore relationships and recommend friends for a given candidate.
+This C++ program implements based on a given table of relationships between candidates. The system employs depth-first search (DFS) to explore relationships and recommend friends for a given candidate.
 
 # Input: 
 Enter the selected candidate character when prompted.
@@ -19,7 +19,6 @@ DFS is applied to traverse the relationship graph starting from the selected can
 For a given candidate, all possible cases are considered where the candidate is recommended by different characters. Each case is enumerated, and the recommended friends are displayed.
 
 # Testing
-
 Automated test cases can be implemented to ensure the correctness and robustness of the program. Test cases should cover various scenarios, including:
 
 # Inputting different candidate characters
@@ -32,5 +31,3 @@ Verifying output for known relationships
 M C
 # Expected Output:
 L,M,N,A,K,B,C,J,V,W,X,Y,Z
-# Contributors
-Saurabh Gautam
