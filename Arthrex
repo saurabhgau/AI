@@ -1,0 +1,63 @@
+//ॐ नमः शिवाय
+#include<bits/stdc++.h>
+using namespace std;
+const int N=26;
+
+//vector of map for creating table
+map<char,vector<char>>mp;
+
+
+//visited array to check reoccurence of character
+map<char,bool>vis;
+
+//dfs
+void dfs(char c)
+{
+    for(auto x:mp[c]){
+        if(vis[x]==false){
+            //print each candidates which called earlier or with him
+            cout<<x<<' ';
+            dfs(x);
+        }
+    }
+}
+
+signed main(){
+    //creating relation which is given in table
+    mp['A']={'B','C','J'};
+    mp['D']={'E','F','G'};
+    mp['H']={'I','K','V'};
+    mp['J']={'V'};
+    mp['K']={'L','M','N','A'};
+    mp['O']={'P','V','U'};
+    mp['Q']={'S','T','D'};
+    mp['U']={'H','J'};
+    mp['V']={'W','X','Y','Z'};
+    //input 
+    //selected candidates
+    cout<<"Enter an Alphabet ";
+    char c;cin>>c;
+
+    //there may be many friend of c who refered him as a friend 
+    //so accordingly there will be many pattern for output
+    vector<char>all;
+
+    for(auto x:mp)
+    {
+        for(auto chr:x.second){
+            if(chr==c){
+                all.push_back(x.first);break;
+            }
+        }
+    }
+    //There may be more than one output for char C
+    cout<<"Total cases are "<<all.size()<<endl;
+    int t=1;
+    for(auto it:all){
+        cout<<"Case :"<<t++<<' ';
+        cout<<it<<' ';
+        dfs(it);
+        cout<<endl;
+    }
+    return 0;
+}
